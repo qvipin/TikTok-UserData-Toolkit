@@ -176,3 +176,8 @@ cython_debug/
 # MacOS
 
 .DS_Store
+
+# Tiktok Files made when testing
+
+Tiktok_Videos/
+comments.txt

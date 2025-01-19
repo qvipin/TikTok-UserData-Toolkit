@@ -27,8 +27,17 @@ else:
     sys.exit(1)
 
 """JSON File"""
-with open(json_file, 'r') as file: 
-    user_data_tiktok = file.read()
+if not json_file.endswith(".json"):
+    print("[*] Error: File not JSON, please specify a valid Tiktok User Data JSON file")
+    sys.exit(1)
+
+try: 
+    with open(json_file, 'r') as file: 
+        user_data_tiktok = file.read()
+except (FileNotFoundError, IsADirectoryError): 
+    print("[*] File Not Found, quitting the program...")
+    sys.exit(1)
+
 
 """JSON Parsing"""
 data = json.loads(user_data_tiktok)
@@ -53,7 +62,7 @@ def file_path_from_name(vid_name): # Deriving file path from name
 
 
 
-for item in range(1, len(video_list)):
+for item in range(0, len(video_list)):
     try:
         vid_date = ((video_list[item]['Date']).replace(" ", "_")).replace(":", "-") # name & date
         video_url = video_list[item]['Link']             

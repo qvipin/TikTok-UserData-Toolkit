@@ -15,7 +15,7 @@ cd TikTok-UserData-Toolkit/scripts
 
 ### Usage
 
-Run any script using the following command:
+Run most scripts using the following command:
 
 ```bash
 ./<script-name> <path-to-json>
@@ -32,6 +32,7 @@ For example:
 The toolkit includes various scripts to parse different types of TikTok data. Some examples include:
 
 - tiktok-video_download.py – Extracts and downloads all your TikTok videos.
+- tiktok-comments_save.py – Extracts all your comments and saves them to a file.
 
 ## Contributing
 
@@ -53,4 +54,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
