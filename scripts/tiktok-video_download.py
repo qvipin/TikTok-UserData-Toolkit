@@ -72,7 +72,7 @@ for item in range(0, len(video_list)):
         file_path = file_path_from_name(vid_name)
         
         download.urlretrieve(video_url, file_path)
-        print(f"[*] Downloading: {vid_name}, currently on item {item}/{len(video_list)}")
+        print(f"[*] Downloading: {vid_name}, currently on item {item + 1}/{len(video_list)}")
     except (download_error.HTTPError, download_error2.InvalidURL, download_error.URLError, ValueError):
         # the code below checks for newlines in url as that is how slideshow image links are represented, so we need to download them in a different way
         if "\n" in video_url: 
@@ -84,9 +84,9 @@ for item in range(0, len(video_list)):
                     file_path = file_path_from_name(vid_name)
                     
                     download.urlretrieve(url, file_path)
-                    print(f"[*] Downloading: {vid_name}, currently on item {item}/{len(video_list)}")
+                    print(f"[*] Downloading: {vid_name}, currently on item {item + 1}/{len(video_list)}")
                 except (download_error.HTTPError, download_error2.InvalidURL, download_error.URLError, ValueError):
-                    print(f"[*] Oops, we can't download a part of {item}/{len(video_list)}! (FYI: This item is a slideshow.)")
+                    print(f"[*] Oops, we can't download a part of {item + 1}/{len(video_list)}! (FYI: This item is a slideshow.)")
 
         else:
             print(f"[*] Oops, we can't download item {item}/{len(video_list)}!")
